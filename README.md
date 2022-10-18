@@ -24,6 +24,6 @@ all resources for the project.
 
 - [Jirayuwat Boonchan](https://github.com/jirayuwat12) as Frontend dev.
 - [Supakone Kongprapan](https://github.com/preamza02) as Frontend dev.
-
+- [Worapol Uphariphuti](https://github.com/worapol19) 
 
 ## Hosted on ...
