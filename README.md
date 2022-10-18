@@ -23,6 +23,7 @@ all resources for the project.
 ## Team member
 
 - [Jirayuwat Boonchan](https://github.com/jirayuwat12) as Frontend dev.
+- [Supakone Kongprapan](https://github.com/preamza02) as Frontend dev.
 
 
 ## Hosted on ...
