@@ -1,5 +1,6 @@
-# Knowledge Chula God Hub 
-## *10 days project ( THINC. )* team <q>1+1 = 1</q>
+# Knowledge Chula God Hub
+
+## _10 days project ( THINC. )_ team <q>1+1 = 1</q>
 
 <br>
 all resources for the project.
@@ -14,7 +15,7 @@ all resources for the project.
 
 **Frontend** react typescript <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png" width ="25">
 
-**Backend**  flask python <img src="https://miro.medium.com/max/800/1*Q5EUk28Xc3iCDoMSkrd1_w.png" width="25">
+**Backend** flask python <img src="https://miro.medium.com/max/800/1*Q5EUk28Xc3iCDoMSkrd1_w.png" width="25">
 
 **Clound and Database** in-dicision
 
@@ -23,6 +24,5 @@ all resources for the project.
 ## Team member
 
 - [Jirayuwat Boonchan](https://github.com/jirayuwat12) as Frontend dev.
-
 
 ## Hosted on ...
