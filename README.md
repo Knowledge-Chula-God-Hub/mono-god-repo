@@ -23,6 +23,7 @@ all resources for the project.
 ## Team member
 
 - [Jirayuwat Boonchan](https://github.com/jirayuwat12) as Frontend dev.
+- [Mark Hunsreesagul](https://github.com/CodingForTheBlind) as Frontend dev.
 
 
 ## Hosted on ...
