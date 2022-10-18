@@ -4,11 +4,11 @@
 <br>
 all resources for the project.
 
-- [Project description](https://discord.com/channels/1031518864514752543/1031518865160683573/1031580529994256466)
+- [Project description](https://docs.google.com/document/d/1JSyAQQS7onfrz4rylOuJ2YZ7Lxr6-Bs5zK3irCddFMA/edit?usp=sharing)
 
-- [Project schedule](https://discord.com/channels/1031518864514752543/1031518865160683573/1031587967455740056)
+- [Project schedule]( https://docs.google.com/spreadsheets/d/1J5ZeQBW8tueLeW9UfQVjjlLHLRjsFEgvFFmfiL5OKZE/edit?usp=sharing)
 
-- [design and wireframe](https://discord.com/channels/1031518864514752543/1031518865160683573/1031588713609838642)
+- [design and wireframe](https://www.figma.com/file/f34wH6VecwukhGc0DzvSjz/1%2B1%3D1?node-id=0%3A1)
 
 ## Project stack
 
@@ -23,7 +23,8 @@ all resources for the project.
 ## Team member
 
 - [Jirayuwat Boonchan](https://github.com/jirayuwat12) as Frontend dev.
+- [Mark Hunsreesagul](https://github.com/CodingForTheBlind) as Frontend dev.
 - [Supakone Kongprapan](https://github.com/preamza02) as Frontend dev.
-
+- [Worapol Uphariphuti](https://github.com/worapol19) 
 
 ## Hosted on ...
