@@ -7,5 +7,4 @@ export interface PostProps{
     postId: number;
     ownerId: number;
     numberOfEdits: number;
-
 }
