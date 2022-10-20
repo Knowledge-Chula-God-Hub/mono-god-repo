@@ -49,8 +49,7 @@ function LandingPage() {
                     margin:"0px",
                     textAlign:"start",
                     width:"850px"
-                }}>Discover note, exam, and get some advice 
-                from CU students on any topic</h1>
+                }}>ตามดูโน๊ตสรุป ข้อสอบเก่า และรับคำแนะนำจากรุ่นพี่นิสิตจุฬาได้ทุกเมื่อในที่เดียว</h1>
 
                 <button className="button">start learning</button>
             </div>
