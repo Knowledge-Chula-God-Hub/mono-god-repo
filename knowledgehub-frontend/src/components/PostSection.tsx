@@ -65,8 +65,8 @@ function PostSection(props:PostProps) {
     return (
         <div style = {PostStyle}>
             <MainPost {...props}></MainPost>
-            commentList.comments.map((CommentProps) =>
-                <CommentSection key = {CommentProps.commentId}  {...{CommentProps}}></CommentSection>
+            commentList.comments.map((p:CommentProps) =>
+                <CommentSection key = {p.commentId}  {...{p}}></CommentSection>
             )
         </div>
     );
