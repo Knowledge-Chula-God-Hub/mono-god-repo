@@ -1,0 +1,14 @@
+.button {
+    background-color: #FF8787;
+    border-radius: 90px;
+    width: 200px;
+    height: 40px;
+    font-size: 24px;
+    font-family: "Poppins";
+    font-weight: 300;
+    border: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
