@@ -1,18 +1,13 @@
-import "./NavBar.css"
+import "../styles/NavBar.css"
 
 function NavBar() {
     return (
-        <nav className = 'nav'>
-            <a href="/">Logo</a>
-            <ul>
-                <li>
-                    <p>something</p>
-                </li>
-                <li>
-                    <p>profile</p>
-                </li>
-            </ul>
-        </nav>
+        <div style={{display:"flex", flexDirection:"row",justifyContent:"space-between",padding:"16px"}}>
+            <h1>Hello</h1>
+            <h1>Hello</h1>
+            <h1>Hello</h1>
+            
+        </div>
     ) 
 }
 export default NavBar
