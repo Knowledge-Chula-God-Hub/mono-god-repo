@@ -24,6 +24,7 @@ all resources for the project.
 ## Team member
 
 - [Jirayuwat Boonchan](https://github.com/jirayuwat12) as Frontend dev.
+- [Mark Hunsreesagul](https://github.com/CodingForTheBlind) as Frontend dev.
 - [Supakone Kongprapan](https://github.com/preamza02) as Frontend dev.
 - [Worapol Uphariphuti](https://github.com/worapol19)
 - [Supharoek Kongprapane](https://github.com/jirayuwat12) as Frontend dev.
