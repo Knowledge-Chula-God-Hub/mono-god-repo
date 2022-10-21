@@ -6,6 +6,8 @@ function LandingPage() {
         <><div style={{
             display: "flex",
             height: "80px",
+            width:"100vw",
+            position:"fixed",
             justifyContent: "center",
             borderBottom: "1px solid black",
             backgroundColor: "#F8C4B4",
@@ -19,7 +21,7 @@ function LandingPage() {
         </div>
         <div style={{
             margin:"0px",
-            height:"calc(100vh - 130px)",
+            height:"calc(100vh - 50px)",
             backgroundColor:"#F8C4B4",
             display:"flex",
             flexDirection:"column",
@@ -35,11 +37,11 @@ function LandingPage() {
                 <h1 style={{
                     color:"black",
                     fontFamily:"Chonburi",
-                    fontSize:"128px",
+                    fontSize:"100px",
                     fontWeight:"normal",
                     margin:"0px",
                     textAlign:"start"
-                }}>Stay learning</h1>
+                }}>สังคมแห่งการเรียนรู้เพื่อจุฬา</h1>
 
                 <h1 style={{
                     color:"black",
