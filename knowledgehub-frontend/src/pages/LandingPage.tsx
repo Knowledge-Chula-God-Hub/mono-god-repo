@@ -1,23 +1,30 @@
 import '../styles/LandingPage.css'
 import dropdown from "../assets/Dropdown.svg"
+import { useEffect, useState } from 'react'
+
+function getDate(time : number) :string{
+
+    time = Number(time);
+    var d = Math.floor(time / (3600*24));
+    var h = Math.floor(time % (3600*24) / 3600);
+    var m = Math.floor(time % 3600 / 60);
+    var s = Math.floor(time % 60);
+    
+    var ret =  ("     " + d.toString()).slice(-3) + ' : ' + ("     " + h.toString()).slice(-2) + ' : ' + ("       " + m.toString()).slice(-2)+ ' : ' +("    " + s.toString()).slice(-2)
+    return ret
+}
 
 function LandingPage() {
+    const [time,setTime] = useState(100000000000)
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setTime(time=>time-1)
+        }, 1000);
+        return () => clearInterval(interval);
+      }, []);
     return (
-        <><div style={{
-            display: "flex",
-            height: "80px",
-            width:"100vw",
-            position:"fixed",
-            justifyContent: "center",
-            borderBottom: "1px solid black",
-            backgroundColor: "#F8C4B4",
-            margin:"0px"
-        }}>
-            <h1 style={{
-                fontFamily: "Poppins",
-                fontSize: "32px",
-                fontWeight: "normal"
-            }}>Bun Chu - la</h1>
+        <><div className='navbar'>
+            <h1>Bun Chu - la</h1>
         </div>
         <div style={{
             margin:"0px",
@@ -27,44 +34,16 @@ function LandingPage() {
             flexDirection:"column",
             justifyContent:"space-evenly"
         }}>
-            <div style={{
-                display:"flex",
-                justifyContent:"flex-start",
-                justifyItems:"left",
-                flexDirection:"column",
-                marginLeft:"64px",
-            }}>
-                <h1 style={{
-                    color:"black",
-                    fontFamily:"Chonburi",
-                    fontSize:"100px",
-                    fontWeight:"normal",
-                    margin:"0px",
-                    textAlign:"start"
-                }}>สังคมแห่งการเรียนรู้เพื่อจุฬา</h1>
+            <div className='sloganBox'>
+                <h1>สังคมแห่งการเรียนรู้เพื่อจุฬา</h1>
 
-                <h1 style={{
-                    color:"black",
-                    fontFamily:"Maitree",
-                    fontSize:"40px",
-                    fontWeight:"normal",
-                    margin:"0px",
-                    textAlign:"start",
-                    width:"850px"
-                }}>ตามดูโน๊ตสรุป ข้อสอบเก่า และรับคำแนะนำจากรุ่นพี่นิสิตจุฬาได้ทุกเมื่อในที่เดียว</h1>
+                <h2>ตามดูโน๊ตสรุป ข้อสอบเก่า และรับคำแนะนำจากรุ่นพี่นิสิตจุฬาได้ทุกเมื่อในที่เดียว</h2>
 
                 <button className="button">start learning</button>
             </div>
             
         </div>
-        <div style={{
-            margin:"0px",
-            height:"calc(50px)",
-            backgroundColor:"#F8C4B4",
-            display:"flex",
-            flexDirection:"row",
-            justifyContent:"space-evenly"
-        }}>
+        <div className='scrollButtonContainer'>
             <div style={{
                 display:"flex",
                 justifyContent:"flex-start",
@@ -84,43 +63,13 @@ function LandingPage() {
                 }}>midterm countdown</h1>
 
             </div>
-            
         </div>
-        <div style={{
-            margin:"0px",
-            height:"calc(100vh)",
-            backgroundColor:"#F8C4B4",
-            display:"flex",
-            flexDirection:"column",
-            justifyContent:"space-evenly"
-        }}>
-            <div style={{
-                display:"flex",
-                justifyContent:"flex-start",
-                justifyItems:"left",
-                flexDirection:"column",
-                marginLeft:"64px",
-            }}>
-                <h1 style={{
-                    color:"black",
-                    fontFamily:"Chonburi",
-                    fontSize:"128px",
-                    fontWeight:"normal",
-                    margin:"0px",
-                    textAlign:"start"
-                }}>Timer</h1>
+        <div className='timerContainer'>
+            <div className='timerBox'>
+                <h1><pre>{getDate(time)}</pre></h1>
+                <pre>days               hour             minute         second</pre>
 
-                <h1 style={{
-                    color:"black",
-                    fontFamily:"Maitree",
-                    fontSize:"40px",
-                    fontWeight:"normal",
-                    margin:"0px",
-                    textAlign:"start",
-                    width:"850px"
-                }}>bra bra bra</h1>
-
-                <button className="button">start learning</button>
+                <button className="bottom button">start learning</button>
             </div>
             
         </div>
