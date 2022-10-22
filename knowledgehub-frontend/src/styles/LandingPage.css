@@ -105,3 +105,14 @@ html{
     margin: 0px;
     text-align: end;
 }
+
+@keyframes test {
+    0% {margin-top: -10px;}
+    50% {margin-top: 0px;}
+    100% {margin-top: -10px;}
+
+}
+
+.scrollButton{
+    animation: test 2s infinite ;
+}

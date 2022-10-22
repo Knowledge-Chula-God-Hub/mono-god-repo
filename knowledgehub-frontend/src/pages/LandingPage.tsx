@@ -55,7 +55,7 @@ function LandingPage() {
                 marginLeft:"64px",
                 gap:"16px"
             }} onClick={()=>{window.scrollTo(0,document.body.scrollHeight)}}>
-                <img src={dropdown} alt="dropdown" width={30}></img>
+                <img className='scrollButton' src={dropdown} alt="dropdown" width={30}></img>
                 <h1 style={{
                     color:"black",
                     fontFamily:"Chonburi",
