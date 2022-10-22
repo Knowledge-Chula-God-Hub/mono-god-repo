@@ -15,10 +15,13 @@ function getDate(time : number) :string{
 }
 
 function LandingPage() {
-    const [time,setTime] = useState(100000000000)
+    const examdate = new Date('2022-11-28')
+    const temp = Math.floor((examdate.getTime()-Date.now())/1000)
+    const [time,setTime] = useState(temp)
     useEffect(() => {
         const interval = setInterval(() => {
-            setTime(time=>time-1)
+            const temp = Math.floor((examdate.getTime()-Date.now())/1000)
+            setTime(temp)
         }, 1000);
         return () => clearInterval(interval);
       }, []);
@@ -60,7 +63,7 @@ function LandingPage() {
                     fontWeight:"normal",
                     margin:"0px",
                     textAlign:"start"
-                }}>midterm countdown</h1>
+                }}>final countdown</h1>
 
             </div>
         </div>
