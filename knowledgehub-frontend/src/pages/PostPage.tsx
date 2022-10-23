@@ -4,6 +4,7 @@ import { UserProps } from "../interfaces/UserProps";
 import { PostProps } from "../interfaces/PostProps";
 import UserPost from "../components/userPost";
 import '../styles/PostPage.css'
+import NavBar from "../components/NavBar";
 
 const testPropos:PostProps = 
 {
@@ -31,12 +32,24 @@ const userTest:UserProps ={
 }
 
 function PostPage() {
+    const bodyStyle = {
+        paddingTop : "98px",
+        margin : "auto",
+        display : "block",
+        gap : '16px',
+        maxWidth : "1108px",
+        fontFamily:"Time new Roman"
+    }
     return (
-        <div className="body">
-            <UserPost {...userTest} />
-            <PostSection {...testPropos}></PostSection>
-            <CommentSection {...testPropos}/>
-        </div>
+        <>
+            <NavBar />
+            <div className="body" style={bodyStyle}>
+                <UserPost {...userTest} />
+                <hr />
+                <PostSection {...testPropos}></PostSection>
+                <CommentSection {...testPropos}/>
+            </div>
+        </>
     )
 }
 export default PostPage

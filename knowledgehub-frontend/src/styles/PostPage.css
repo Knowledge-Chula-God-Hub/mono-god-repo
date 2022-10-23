@@ -1,56 +1,10 @@
 *{
-    font-family: "Chonburi";
+    font-family: "time new roman";
+    font-size: 20px;
+    justify-content: center;
+    
 }
-.body{
-    margin: auto;
-    display: block;
-    gap: 16px;
-    max-width: 1108px;
-}
-
-.UserPost{
-    gap: 1px;
-    display: flex;
-}
-.UserPost .lhs{
-    display: flex;
-}
-
-.UserPost .lhs .nametime{
-    margin: auto;
-    display: flex;
-}
-.UserPost .lhs p{
-    margin: 0px;
-}
-.UserPost .lhs img{
-    height: 70px;
-    width: 70px;
-}
-
-.UserPost .lhs .nametime{
-    gap: 1px;
-    display: grid;
-    margin: 0px;
-}
-
-.MainPost{
-    margin: auto;
-    max-width: 1048px;
-}
-.CommentSection{
-    margin: auto;
-    max-width: 1048px;
-}
-.CommentForm{
-    margin: auto;
-    height: 183px;
-    width: 1048px;
-}
-.CommentForm label{
-    font-size: 100px;
-}
-
+/* 
 
 .CommentForm .form{
     height: 150px;
@@ -59,4 +13,4 @@
 .CommentForm .submit{
     height: 150px;
     width: 1048px;
-}
+} */

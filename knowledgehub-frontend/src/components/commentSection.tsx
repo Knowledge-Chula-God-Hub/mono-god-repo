@@ -27,9 +27,12 @@ function CommentSection(props:PostProps) {
     }, [])
     return (
         <>
-            <div className='CommentSection'>
+            <div className='CommentSection' style={{maxWidth: "900px", margin: "auto"}}>
                 {commentList.map((props:CommentProps) =>(
-                    <CommentComponent key = {props.commentId} {...props}></CommentComponent>
+                    <>
+                        <CommentComponent key = {props.commentId} {...props}></CommentComponent>
+                        <hr />
+                    </>
                 ))}
             </div>
         </>
