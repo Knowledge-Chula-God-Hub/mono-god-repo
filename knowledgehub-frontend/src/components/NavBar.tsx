@@ -8,6 +8,8 @@ function NavBar() {
                     justifyContent:"space-between",
                     padding:"0px 16px",
                     borderBottom: "2px solid black",
+                    position:"fixed",
+                    width:"99vw",
                     height:"80px"}}>
             <img src={BCulogo} width="83px"></img>
             <h1 style={{
