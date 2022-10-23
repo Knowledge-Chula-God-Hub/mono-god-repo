@@ -42,7 +42,7 @@ function LandingPage() {
 
                 <h2>ตามดูโน๊ตสรุป ข้อสอบเก่า และรับคำแนะนำจากรุ่นพี่นิสิตจุฬาได้ทุกเมื่อในที่เดียว</h2>
 
-                <button className="button">start learning</button>
+                <button className="button" onClick={()=>window.location.href = '/home'}>start learning</button>
             </div>
             
         </div>
@@ -72,7 +72,7 @@ function LandingPage() {
                 <h1><pre>{getDate(time)}</pre></h1>
                 <pre>days               hour             minute         second</pre>
 
-                <button className="bottom button">start learning</button>
+                <button className="bottom button" onClick={()=>window.location.href = '/home'}>start learning</button>
             </div>
             
         </div>
