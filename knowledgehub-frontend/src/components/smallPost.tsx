@@ -1,6 +1,6 @@
 import { PostProps } from "../interfaces/PostProps"
 
-const navStyle = {
+const SmallPostStyle = {
     display:"flex", 
     // flexDirection:"row",
     justifyContent:"space-between",
@@ -9,7 +9,7 @@ const navStyle = {
 };
 
 function SmallPostSection(props:PostProps) {
-    const {isEnd,tag,time,title,message,postId,ownerId,numberOfEdits} = props;
+    const {isEnd,tag,time,title,message,Id,ownerId,numberOfEdits} = props;
     return (
         <h1>this is PostSection</h1>
     )

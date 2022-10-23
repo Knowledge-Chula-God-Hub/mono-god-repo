@@ -3,7 +3,7 @@ export interface PostProps{
     tag:string;
     title: string;
     message: string;
-    postId: number;
+    Id: number;
     ownerId: number;
     time: Date;
     timeEdited: Date;
