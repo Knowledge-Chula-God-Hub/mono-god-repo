@@ -6,12 +6,12 @@ function CommentForm() {
         return "nice"
     }
     return (
-        <form className="CommentForm" style={{margin:"auto",maxWidth:"1048px",justifyContent:"center"}} onSubmit={handleSubmit}>
-        <textarea className = 'form' placeholder="..What do you think 555" style={{resize: "none",padding: "10px",maxWidth:"1048px",height:"150px",width:"-webkit-fill-available"}}/>
-        <div style={{display:"flex",justifyContent:"end"}}>
-            <input className = 'submitButton' type="submit" value="Submit" />
-        </div>
-      </form>
+        <form className="CommentForm" style={{position:"relative",display:"inline-block",margin:"auto",maxWidth:"1048px",justifyContent:"center"}} onSubmit={handleSubmit}>
+            <textarea className = 'form' placeholder="..What do you think 555" style={{resize: "none",padding: "10px",maxWidth:"1048px",height:"150px",width:"1048px"}}/>
+            <div style={{display:"flex",justifyContent:"end"}}>
+                <input className = 'submitButton' type="submit" value="Submit" style={{position:"absolute",bottom:"10px",right:"10px"}}/>
+            </div>
+        </form>
     )
 }
 

@@ -14,9 +14,12 @@ function isSelect(i:number,x:number) : object{
     }
 }
 
-function SideBar() {
+function SideBar(props:any) {
     const [selected,setSelected] = useState(0);
-    
+    const {setCondition} = props;
+    useEffect(()=>{
+        setCondition(selected);
+    },[selected]);
     return (
         <div style={{display:"flex", 
                     flexDirection:"column",

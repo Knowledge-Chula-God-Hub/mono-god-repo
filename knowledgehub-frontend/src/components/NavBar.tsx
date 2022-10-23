@@ -10,7 +10,8 @@ function NavBar() {
                     borderBottom: "2px solid black",
                     position:"fixed",
                     width:"99vw",
-                    height:"80px"}}>
+                    height:"80px",
+                    backgroundColor:"white"}}>
             <img src={BCulogo} width="83px"></img>
             <h1 style={{
                 color:"black",

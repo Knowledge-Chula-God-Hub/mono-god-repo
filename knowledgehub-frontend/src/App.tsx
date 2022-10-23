@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './styles/App.css';
 import HomePage from './pages/HomePage'
 import { Routes ,Route, Router } from 'react-router-dom';
@@ -11,7 +10,7 @@ function App() {
       <Routes>
         <Route path="/home" element={<HomePage/>} />
         <Route path = "/" element={<LandingPage/>}/>
-        <Route path = "/Post" element={<PostPage/>}/>
+        <Route path = "/Post/:id" element={<PostPage/>}/>
       </Routes>
   );
 }
