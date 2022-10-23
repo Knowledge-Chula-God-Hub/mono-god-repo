@@ -6,7 +6,8 @@ function HomePage() {
     return (
         
         <>
-            <LandingPage></LandingPage>
+            <NavBar></NavBar>
+            <SideBar></SideBar>
         </>
     )
 }
