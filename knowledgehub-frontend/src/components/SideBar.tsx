@@ -21,10 +21,12 @@ function SideBar() {
         <div style={{display:"flex", 
                     flexDirection:"column",
                     width:"300px",
+                    top:"80px",
                     height:"calc(100vh - 80px)",
-                    position:"sticky",
+                    position:"fixed",
                     borderRight:"2px solid black",
                     paddingTop:"16px"
+
         }}>
             <button className="menu_button" style={isSelect(0,selected)} onClick={()=>{setSelected(0)}}>My feed</button>
             <h1 className="category">Discover</h1>
