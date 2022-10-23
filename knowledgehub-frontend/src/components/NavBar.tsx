@@ -31,7 +31,6 @@ function NavBar() {
                 }}>Hi, Jirayuwat</h1>
                 <img src={avatar} width="50px" className="avatar"></img>
             </div>
-            
         </div>
     ) 
 }

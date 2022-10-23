@@ -1,11 +1,11 @@
 export interface PostProps{
     isEnd: boolean;
     tag:string;
-    time: string;
     title: string;
     message: string;
-    postId: number;
+    Id: number;
     ownerId: number;
+    time: Date;
+    timeEdited: Date;
     numberOfEdits: number;
-
 }
