@@ -9,17 +9,24 @@ function HomePage() {
     useEffect(()=>{
         var id = 0;
         const interval = setInterval(()=>{
-            const post = {
-                isEnd: true,
-                tag:"learn",
-                title: "test" + id.toString(),
-                message: "string stringstring string stringstring string stringstring string stringstring string stringstring string stringstring string stringstring string stringstring string stringstring string stringstring string stringstring string stringstring string stringstring string stringstring string stringstring string stringstring string stringstring string stringstring " + id.toString(),
-                Id: id,
-                ownerId: 64402301,
-                time: new Date('2020-06-11'),
-                timeEdited: new Date('2021-05-12'),
-                numberOfEdits: 4 + id,
-            } as PostProps
+            const post:PostProps = 
+                {
+                    isEnd: false,
+                    tagSubject: "21102",
+                    type:"test",
+                    time: new Date(),
+                    timeEdited: new Date(),
+                    title:"Topic",
+                    message:`Description - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis   purus.  eget
+                    ac justo egestas maximus. Aenean ornare viverra nunc, et interdum erat  .  a placerat . 
+                    Fusce mattis augue orci, sit amet vestibulum odio euismod eget. Pellentesque nec  sem 
+                    Description - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis   purus.  eget
+                    ac justo egestas maximus. Aenean ornare viverra nunc, et interdum erat  .  a placerat . 
+                    Fusce mattis augue orci, sit amet vestibulum odio euismod eget. Pellentesque nec  sem `,
+                    Id: 0,
+                    ownerId: 6400000000,
+                    numberOfEdits: 99,
+                };
             id = id +1
             var tempList = [...postList,post]
             setPostList(tempList)

@@ -20,7 +20,7 @@ function PostCard(props : PostProps){
             </div>
             <div className='tagandbutton'>
                 <div className='left'>
-                    <h1>{props.tag}</h1>
+                    <h1>{props.tagSubject}</h1>
                     <h2>{props.title}</h2>
                 </div>
                 <div className='right'>

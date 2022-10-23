@@ -9,7 +9,8 @@ import NavBar from "../components/NavBar";
 const testPropos:PostProps = 
 {
     isEnd: false,
-    tag: "test",
+    tagSubject: "21102",
+    type:"test",
     time: new Date(),
     timeEdited: new Date(),
     title:"Topic",

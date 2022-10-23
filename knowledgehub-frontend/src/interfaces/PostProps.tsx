@@ -1,6 +1,6 @@
 export interface PostProps{
     isEnd: boolean;
-    tagSUbject:string;
+    tagSubject:string;
     type:string;
     title: string;
     message: string;
