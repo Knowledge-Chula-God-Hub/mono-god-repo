@@ -14,7 +14,7 @@ function HomePage() {
             setPostList(data)
         )})
     },[postList])
-    let SearchBarRender = (condiiton === 4) ? (<SearchBar />):(null) ;
+    let SearchBarRender = (condiiton === 2) ? (<SearchBar />):(null) ;
     return (
         
         <>

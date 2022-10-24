@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import {FaArrowCircleUp} from 'react-icons/fa';
 import styled from 'styled-components';
 import dropdown from '../assets/Dropdown.svg'
 const ScrollButton = () =>{
