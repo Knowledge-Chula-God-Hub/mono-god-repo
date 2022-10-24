@@ -5,6 +5,7 @@ import { PostProps } from "../interfaces/PostProps"
 import { useEffect, useState } from "react"
 import PostCard from "../components/PostCard"
 import { getPostList } from "../api/Api"
+import { SearchBar } from "../components/searchBar"
 function HomePage() {
     const [condiiton,setCondition] = useState<number>(0);
     const [postList,setPostList] = useState<PostProps[]>([]);
@@ -13,6 +14,7 @@ function HomePage() {
             setPostList(data)
         )})
     },[postList])
+    let SearchBarRender = (condiiton === 4) ? (<SearchBar />):(null) ;
     return (
         
         <>
@@ -29,6 +31,7 @@ function HomePage() {
                     flexDirection:"column",
                     width : "calc(100vw - 302px)",
                 }}>
+                    {SearchBarRender}
                     {
                         postList.map(post=>PostCard(post))
                     }

@@ -11,8 +11,10 @@ function NavBar() {
                     position:"fixed",
                     width:"99vw",
                     height:"80px",
-                    backgroundColor:"white"}}>
-            <img src={BCulogo} width="83px"></img>
+                    backgroundColor:"white",
+                    zIndex:"999"
+                    }}>
+            <a href="/home"><img src={BCulogo} width="83px"></img></a>
             <h1 style={{
                 color:"black",
                 fontFamily:"Poppins",
