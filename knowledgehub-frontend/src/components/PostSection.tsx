@@ -6,14 +6,12 @@ function CommentForm() {
         return "nice"
     }
     return (
-        <form className="CommentForm" onSubmit={handleSubmit}>
-        <label>
-          <input className = 'form' type="text" value={"..What do you think"}/>
-        </label>
-        <div>
-        <input className = 'submitButton' type="submit" value="Submit" />
-        </div>
-      </form>
+        <form className="CommentForm" style={{position:"relative",display:"inline-block",margin:"auto",maxWidth:"1048px",justifyContent:"center"}} onSubmit={handleSubmit}>
+            <textarea className = 'form' placeholder="..What do you think 555" style={{resize: "none",padding: "10px",maxWidth:"1048px",height:"150px",width:"1048px"}}/>
+            <div style={{display:"flex",justifyContent:"end"}}>
+                <input className = 'submitButton' type="submit" value="Submit" style={{position:"absolute",bottom:"10px",right:"10px"}}/>
+            </div>
+        </form>
     )
 }
 
@@ -21,9 +19,9 @@ function MainPost(props:PostProps) {
     const title = props.title;
     const message = props.message;
     return (
-        <div className="MainPost">
-            <h1>{title}</h1>
-            <p>{message}</p>
+        <div className="MainPost" style={{margin: "auto",maxWidth: "1048px"}}>
+            <h1 style={{textAlign: "center",fontSize:"40px"}}>{title}</h1>
+            <p style={{fontSize:"24px"}}>{message}</p>
         </div>
     )
 }
