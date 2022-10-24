@@ -22,7 +22,8 @@ function NavBar() {
             <div style={{
                 display:"flex",
                 flexDirection:"row",
-                gap:"8px"
+                gap:"8px",
+                marginRight:"16px"
             }}>
                 <h1 style={{
                     fontFamily:"Time new Roman",
