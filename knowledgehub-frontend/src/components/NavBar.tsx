@@ -19,8 +19,9 @@ function NavBar() {
                 color:"black",
                 fontFamily:"Poppins",
                 fontSize:"32px",
-                fontWeight:"normal"
-            }}>Bun Chu - la</h1>
+                fontWeight:"normal",
+                userSelect:"none"
+            }} onClick = {() => window.location.href = '/home'}>Bun Chu - la</h1>
             <div style={{
                 display:"flex",
                 flexDirection:"row",
