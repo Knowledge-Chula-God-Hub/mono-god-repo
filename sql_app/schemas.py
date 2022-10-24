@@ -1,39 +1,60 @@
+from datetime import datetime
 from typing import Union
 
 from pydantic import BaseModel
 
-
-class ItemBase(BaseModel):
-    title: str
-    description: Union[str, None] = None
-
-
-class ItemCreate(ItemBase):
+# User
+class UserBase(BaseModel):
+    username: str
+class UserCreate(UserBase):
     pass
 
-
-class Item(ItemBase):
-    id: int
-    owner_id: int
-
+class User(UserBase):
+    id : int
+    likes : int
+    rank : int
+    profileUrl :str
     class Config:
         orm_mode = True
 
 
-################# User #############################
+# Post
+class PostBase(BaseModel):
+    ownerID : int
+    title : Union[str, None]
+    message : Union[str, None]
+    tagSubject : str
+    typePost : str
 
-class UserBase(BaseModel):
-    email: str
+class PostCreate(PostBase):
+    pass
+
+class Post(PostBase):
+    id : int
+    isEnd : bool
+    numberOfEdits : int
+    timeCreate : datetime
+    timeLastEdited : datetime
+    class Config:
+        orm_mode = True
 
 
-class UserCreate(UserBase):
-    password: str
 
 
-class User(UserBase):
-    id: int
-    is_active: bool
-    items: list[Item] = []
+# Comment
+class CommentBase(BaseModel):
+    message : Union[str, None]
+    postId : int
+    ownerID : int
 
+class CommentCreate(CommentBase):
+    pass
+
+class Comment(CommentBase):
+    score : int
+    id : int
+    timeCreate : datetime
+    timeLastEdited : datetime
+    numberOfEdits : int
     class Config:
         orm_mode = True

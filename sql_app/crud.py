@@ -2,35 +2,46 @@ from sqlalchemy.orm import Session
 
 from . import models, schemas
 
-
+# USER
 def get_user(db: Session, user_id: int):
-    return db.query(models.User).filter(models.User.id == user_id).first()
-
-
-def get_user_by_email(db: Session, email: str):
-    return db.query(models.User).filter(models.User.email == email).first()
-
-
-def get_users(db: Session, skip: int = 0, limit: int = 100):
-    return db.query(models.User).offset(skip).limit(limit).all()
-
+    return db.query(models.UserTable).filter(models.UserTable.id == user_id).first()
 
 def create_user(db: Session, user: schemas.UserCreate):
-    fake_hashed_password = user.password + "notreallyhashed"
-    db_user = models.User(email=user.email, hashed_password=fake_hashed_password)
+    db_user = models.UserTable(username=user.username)
     db.add(db_user)
     db.commit()
     db.refresh(db_user)
     return db_user
 
+# POST
 
-def get_items(db: Session, skip: int = 0, limit: int = 100):
-    return db.query(models.Item).offset(skip).limit(limit).all()
+def get_post(db:Session, skip: int = 0, limit: int = 100):
+    return db.query(models.PostTable).offset(skip).limit(limit).all()
 
-
-def create_user_item(db: Session, item: schemas.ItemCreate, user_id: int):
-    db_item = models.Item(**item.dict(), owner_id=user_id)
-    db.add(db_item)
+def create_post(db: Session, post: schemas.PostCreate):
+    db_user = models.PostTable(
+        ownerID=post.ownerID,
+        title = post.title,
+        message = post.message,
+        tagSubject = post.tagSubject,
+        typePost = post.typePost,)
+    db.add(db_user)
     db.commit()
-    db.refresh(db_item)
-    return db_item
+    db.refresh(db_user)
+    return db_user
+
+# Comment
+
+def get_comment(db:Session, postId :int):
+    return db.query(models.CommentTable).filter(models.CommentTable.postId == postId).all()
+
+def create_commnet(db: Session, commnet: schemas.CommentCreate):
+    db_user = models.UserTable(
+        message=commnet.message,
+        postId = commnet.postId,
+        ownerID = commnet.ownerID
+        )
+    db.add(db_user)
+    db.commit()
+    db.refresh(db_user)
+    return db_user
