@@ -10,14 +10,18 @@ function NavBar() {
                     borderBottom: "2px solid black",
                     position:"fixed",
                     width:"99vw",
-                    height:"80px"}}>
-            <img src={BCulogo} width="83px"></img>
+                    height:"80px",
+                    backgroundColor:"white",
+                    zIndex:"999"
+                    }}>
+            <a href="/home"><img src={BCulogo} width="83px"></img></a>
             <h1 style={{
                 color:"black",
                 fontFamily:"Poppins",
                 fontSize:"32px",
-                fontWeight:"normal"
-            }}>Bun Chu - la</h1>
+                fontWeight:"normal",
+                userSelect:"none"
+            }} onClick = {() => window.location.href = '/home'}>Bun Chu - la</h1>
             <div style={{
                 display:"flex",
                 flexDirection:"row",

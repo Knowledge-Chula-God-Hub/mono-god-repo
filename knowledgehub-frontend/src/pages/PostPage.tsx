@@ -4,24 +4,11 @@ import { UserProps } from "../interfaces/UserProps";
 import { PostProps } from "../interfaces/PostProps";
 import UserPost from "../components/userPost";
 import '../styles/PostPage.css'
-
-const testPropos:PostProps = 
-{
-    isEnd: false,
-    tag: "test",
-    time: new Date(),
-    timeEdited: new Date(),
-    title:"Topic",
-    message:`Description - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis   purus.  eget
-    ac justo egestas maximus. Aenean ornare viverra nunc, et interdum erat  .  a placerat . 
-    Fusce mattis augue orci, sit amet vestibulum odio euismod eget. Pellentesque nec  sem 
-    Description - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis   purus.  eget
-    ac justo egestas maximus. Aenean ornare viverra nunc, et interdum erat  .  a placerat . 
-    Fusce mattis augue orci, sit amet vestibulum odio euismod eget. Pellentesque nec  sem `,
-    Id: 0,
-    ownerId: 6400000000,
-    numberOfEdits: 99,
-};
+import NavBar from "../components/NavBar";
+import { useParams } from "react-router-dom";
+import { getPostDetails } from "../api/Api";
+import { useState,useEffect } from 'react';
+import { defaultPostProps } from "../api/defaultVarible";
 
 const userTest:UserProps ={
     id: 6432100000,
@@ -31,11 +18,31 @@ const userTest:UserProps ={
 }
 
 function PostPage() {
+    const { Id } = useParams();
+    const [testPropos,settestPropos] = useState(defaultPostProps);
+    useEffect(() =>{
+        getPostDetails(Number(Id)).then((data)=>{
+            settestPropos(data)
+        })
+    }, [])
+    const bodyStyle = {
+        paddingTop : "98px",
+        margin : "auto",
+        display : "block",
+        gap : '16px',
+        maxWidth : "1108px",
+        fontFamily:"Time new Roman"
+    }
     return (
-        <div className="body">
-            <UserPost {...userTest} />
-            <PostSection {...testPropos}></PostSection>
-            <CommentSection {...testPropos}/>
+        <div className="postPage">
+            <NavBar />
+            <div className="body" style={bodyStyle}>
+                <h1>{Id}</h1>
+                <UserPost {...userTest} />
+                <hr />
+                <PostSection {...testPropos}></PostSection>
+                <CommentSection {...testPropos}/>
+            </div>
         </div>
     )
 }
