@@ -18,6 +18,10 @@ function LandingPage() {
     const examdate = new Date('2022-11-28')
     const temp = Math.floor((examdate.getTime()-Date.now())/1000)
     const [time,setTime] = useState(temp)
+
+    const handleToHome = ()=>window.location.href = '/home';
+    const handleScrollDown = ()=>{window.scrollTo(0,document.body.scrollHeight)};
+
     useEffect(() => {
         const interval = setInterval(() => {
             const temp = Math.floor((examdate.getTime()-Date.now())/1000)
@@ -42,7 +46,7 @@ function LandingPage() {
 
                 <h2>ตามดูโน๊ตสรุป ข้อสอบเก่า และรับคำแนะนำจากรุ่นพี่นิสิตจุฬาได้ทุกเมื่อในที่เดียว</h2>
 
-                <button className="button" onClick={()=>window.location.href = '/home'}>start learning</button>
+                <button className="button" onClick={handleToHome}>start learning</button>
             </div>
             
         </div>
@@ -54,7 +58,7 @@ function LandingPage() {
                 flexDirection:"row",
                 marginLeft:"64px",
                 gap:"16px"
-            }} onClick={()=>{window.scrollTo(0,document.body.scrollHeight)}}>
+            }} onClick={handleScrollDown}>
                 <img className='scrollButton' src={dropdown} alt="dropdown" width={30}></img>
                 <h1 style={{
                     color:"black",
@@ -72,7 +76,7 @@ function LandingPage() {
                 <h1><pre>{getDate(time)}</pre></h1>
                 <pre>days               hour             minute         second</pre>
 
-                <button className="bottom button" onClick={()=>window.location.href = '/home'}>start learning</button>
+                <button className="bottom button" onClick={handleToHome}>start learning</button>
             </div>
             
         </div>

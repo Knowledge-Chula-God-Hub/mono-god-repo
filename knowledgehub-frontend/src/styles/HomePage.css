@@ -1,3 +1,70 @@
 a:visited {
     color: black;
 }
+
+.modal{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: white;
+    border-radius: 30px;
+    width: 1000px;
+    height: 336px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 16px;
+    align-items: flex-start;
+    font-family: "Poppins";
+    
+}
+.topPart{
+    width: 1000px;
+    height: 336px;
+    display: flex;
+    flex-direction: row;
+    padding-top: 16px;
+    align-items: flex-start;
+    font-family: "Poppins";
+}
+
+.bottomPart{
+    position: absolute;
+    top: 85%;
+    left: 50% ;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 24px;
+    border: 1px solid #BCE29E;
+    padding: 4px 16px;
+    border-radius: 30px;
+    background-color: #BCE29E;
+}
+.modal h1{
+    font-weight: bold;
+    margin: 0px;
+}
+.modal h2{
+    margin: 0px;
+    font-weight: normal;
+}
+.modal div{
+
+}
+
+.leftPart{
+    width: 500px;
+    height: 230px;
+    border-right: 1px solid #D9D9D9;
+    display: flex;
+    flex-direction: column;
+    padding-left: 32px;
+}
+
+.rightPart{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 32px;
+}
+
+

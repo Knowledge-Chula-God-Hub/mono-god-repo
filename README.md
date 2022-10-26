@@ -14,9 +14,9 @@ all resources for the project.
 
 **Frontend** react typescript <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png" width ="25">
 
-**Backend**  flask python <img src="https://miro.medium.com/max/800/1*Q5EUk28Xc3iCDoMSkrd1_w.png" width="25">
+**Backend**  fastAPI python <img src="https://repository-images.githubusercontent.com/260928305/92388600-8d1c-11ea-9993-a726466b5099" width="25">
 
-**Clound and Database** in-dicision
+**Cloud and Database** PostgreSQL <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1985px-Postgresql_elephant.svg.png" width = "25">
 
 **server** in-dicision
 
@@ -25,16 +25,6 @@ all resources for the project.
 - [Jirayuwat Boonchan](https://github.com/jirayuwat12) as Frontend dev.
 - [Mark Hunsreesagul](https://github.com/CodingForTheBlind) as Frontend dev.
 - [Supakone Kongprapan](https://github.com/preamza02) as Frontend dev.
-- [Worapol Uphariphuti](https://github.com/worapol19) 
-
+- [Worapol Uphariphuti](https://github.com/worapol19) as Backend dev.
+- [Artty]() as Project manager
 ## Hosted on ...
-
-
-<u> mark</u>
-
-```
-font-family: 'Chonburi', cursive;
-font-family: 'Maitree', serif;
-font-family: 'Poppins';
-font-family: 'Time new Roman';
-```

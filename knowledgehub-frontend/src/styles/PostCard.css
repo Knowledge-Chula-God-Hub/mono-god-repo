@@ -15,7 +15,7 @@
 .msg{
     font-family: "Poppins";
     font-weight: 300;
-    font-size: 24px;
+    font-size: 20px;
     color: black;
     display: -webkit-box;
     overflow: hidden;
@@ -70,6 +70,7 @@
     margin: 0px;
     display: flex;
     gap: 24px;
+    align-items: center;
 }
 
 .left h1{
@@ -90,6 +91,6 @@
 }
 
 .buttomlogo{
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
 }

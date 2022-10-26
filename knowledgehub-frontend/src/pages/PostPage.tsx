@@ -1,7 +1,6 @@
 import CommentSection from "../components/commentSection"
 import PostSection from "../components/PostSection"
 import { UserProps } from "../interfaces/UserProps";
-import { PostProps } from "../interfaces/PostProps";
 import UserPost from "../components/userPost";
 import '../styles/PostPage.css'
 import NavBar from "../components/NavBar";
@@ -20,11 +19,13 @@ const userTest:UserProps ={
 function PostPage() {
     const { Id } = useParams();
     const [testPropos,settestPropos] = useState(defaultPostProps);
+
     useEffect(() =>{
         getPostDetails(Number(Id)).then((data)=>{
             settestPropos(data)
         })
     }, [])
+    
     const bodyStyle = {
         paddingTop : "98px",
         margin : "auto",
