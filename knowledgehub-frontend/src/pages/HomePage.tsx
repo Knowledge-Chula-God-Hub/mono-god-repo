@@ -10,6 +10,13 @@ import "../styles/HomePage.css"
 import FilterModal from "../components/FilterModal"
 import { NONAME } from "dns"
 
+function sortCondition(condition:number,postList:PostProps[]):PostProps[]{
+    const newPostList = postList
+    if (condition ===1) newPostList.sort((a, b) => a.time.getTime() < b.time.getTime() ? -1 : a.time.getTime() > b.time.getTime() ? 1 : 0);
+    else if (condition ===2) newPostList.sort((a, b) => a.likes < b.likes ? -1 : a.likes > b.likes ? 1 : 0);
+    return newPostList
+}
+
 function HomePage() {
     const [condiiton,setCondition] = useState<number>(0);
     const [postList,setPostList] = useState<PostProps[]>([]);
@@ -27,13 +34,14 @@ function HomePage() {
     }
 
     useEffect(()=>{
-        getPostList(condiiton).then((data)=>{(
+        getPostList().then((data)=>{(
             setPostList(data)
         )})
     },[postList,condiiton])
     
     let SearchBarRender = (condiiton === 2) ? (<SearchBar openFilter = {setOpen} />):(null) ;
     
+
     return (
         <>
             <NavBar></NavBar>
@@ -48,7 +56,7 @@ function HomePage() {
                 }}>
                     {SearchBarRender}
                     {([0,1,2,4,5].includes(condiiton))?
-                        postList.map(post=>PostCard(post)) : null
+                        sortCondition(condiiton,postList).map(post=>PostCard(post)):null
                     }
                 </div>
             </div>
