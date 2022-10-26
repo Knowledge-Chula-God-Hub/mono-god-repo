@@ -2,8 +2,8 @@ from pickletools import int4
 from fastapi import Depends, FastAPI, HTTPException
 from sqlalchemy.orm import Session
 
-from sql_app import crud, models, schemas
-from sql_app.database import SessionLocal, engine , statusDB
+import crud, models, schemas
+from database import SessionLocal, engine , statusDB
 
 models.Base.metadata.create_all(bind=engine)
 
@@ -24,8 +24,8 @@ def homePage(db: Session = Depends(get_db)):
     db_user = crud.get_user(db,id = 1)
     return {"msg":"Helloword"}
 
-@app.get("/users/all", response_model=schemas.User2)
-def read_users(db: Session = Depends(get_db)):
+@app.get("/users/all", response_model=schemas.User)
+async def read_users(db: Session = Depends(get_db)):
     db_user = crud.get_user_all(db)
     return db_user
 

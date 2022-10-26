@@ -1,17 +1,17 @@
 from email.policy import default
-from sqlalchemy import Boolean, Column, ForeignKey, Integer, Text, String , SmallInteger , DateTime
+from sqlalchemy import Boolean, Column, ForeignKey, Integer, Text, String , SmallInteger , DateTime, VARCHAR
 from sqlalchemy.orm import relationship
 
-from .database import Base
+from database import Base
 from sqlalchemy.sql import func
 
 class UserTable(Base):
-    __tablename__ = "UserTable"
-    username = Column(String(length = 50))
+    __tablename__ = "usertable"
+    username = Column(VARCHAR(length = 50))
     id = Column(Integer, primary_key=True, index=True)
     likes = Column(SmallInteger ,default = 0,nullable=True)
     rank  = Column(SmallInteger ,default = 0,nullable=True)
-    profileUrl = Column(String(length = 50), default="",nullable=True)
+    profile_url = Column(VARCHAR(length = 50), default="",nullable=True)
 
     # Post = relationship("PostTable", back_populates="owner")
     # Comment = relationship("CommentTable", back_populates="owner")

@@ -1,6 +1,5 @@
 from sqlalchemy.orm import Session
-
-from . import models, schemas
+import models, schemas
 
 # USER
 def get_user_all(db:Session):

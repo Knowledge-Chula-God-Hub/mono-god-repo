@@ -5,7 +5,7 @@ import databases
 
 DB_USER = "preamza02"
 DB_PASSWORD = "mysecretpassword"
-DB_NAME = "tendb2"
+DB_NAME = "postgres"
 SQLALCHEMY_DATABASE_URL = f"postgresql://{DB_USER}:{DB_PASSWORD}@localhost/{DB_NAME}"
 
 statusDB = databases.Database(SQLALCHEMY_DATABASE_URL)

@@ -13,7 +13,7 @@ class User(UserBase):
     id : int
     likes : int
     rank : int
-    profileUrl :str
+    profile_url :str
     class Config:
         orm_mode = True
 
