@@ -39,8 +39,11 @@ function HomePage() {
         )})
     },[postList,condiiton])
     
-    let SearchBarRender = (condiiton === 2) ? (<SearchBar openFilter = {setOpen} />):(null) ;
+    let SearchBarRender = (condiiton === 3) ? (<SearchBar openFilter = {setOpen} />):(null) ;
     
+    const NewPostRender = (condiiton === 4) ?(
+        <div></div>
+    ):null;
 
     return (
         <>
@@ -58,6 +61,7 @@ function HomePage() {
                     {([0,1,2,4,5].includes(condiiton))?
                         sortCondition(condiiton,postList).map(post=>PostCard(post)):null
                     }
+                    {NewPostRender}
                 </div>
             </div>
             <FilterModal {...{open,year,handleClose,handleSliderChange,handleSubmit}}/>
