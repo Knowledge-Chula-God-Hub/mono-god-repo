@@ -5,7 +5,7 @@ from pydantic import BaseModel
 
 # User
 class UserBase(BaseModel):
-    username: str
+    username: Union[str,None]
 class UserCreate(UserBase):
     pass
 
@@ -16,7 +16,6 @@ class User(UserBase):
     profileUrl :str
     class Config:
         orm_mode = True
-
 
 # Post
 class PostBase(BaseModel):

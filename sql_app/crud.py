@@ -3,8 +3,14 @@ from sqlalchemy.orm import Session
 from . import models, schemas
 
 # USER
-def get_user(db: Session, user_id: int):
-    return db.query(models.UserTable).filter(models.UserTable.id == user_id).first()
+def get_user_all(db:Session):
+    return db.query(models.UserTable).first()
+
+def get_user(db: Session, id: int):
+    return db.query(models.UserTable).filter(models.UserTable.id == id).first()
+
+def get_user_name(db: Session, username: int):
+    return db.query(models.UserTable).filter(models.UserTable.username == username).first()
 
 def create_user(db: Session, user: schemas.UserCreate):
     db_user = models.UserTable(username=user.username)
@@ -19,8 +25,7 @@ def get_post(db:Session, skip: int = 0, limit: int = 100):
     return db.query(models.PostTable).offset(skip).limit(limit).all()
 
 def create_post(db: Session, post: schemas.PostCreate):
-    db_user = models.PostTable(
-        ownerID=post.ownerID,
+    db_user = models.PostTable(ownerID=post.ownerID,
         title = post.title,
         message = post.message,
         tagSubject = post.tagSubject,
