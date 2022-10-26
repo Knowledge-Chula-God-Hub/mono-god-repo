@@ -1,7 +1,6 @@
 import { CommentProps } from "../interfaces/CommentProps";
 import { PostProps } from "../interfaces/PostProps";
-import { defaultCommentList, defaultPostProps } from "./defaultVarible";
-const defaultPath = 'http://localhost:8000/'
+const defaultPath = 'http://localhost:8000'
 
 async function getAPI(subPath:string,Type:string,body:object){
     const path = defaultPath.concat(subPath.toString());
