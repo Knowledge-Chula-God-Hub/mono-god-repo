@@ -26,6 +26,7 @@ export const defaultPostProps:PostProps = {
     isEnd: false,
     tagSubject: "21102",
     type:"test",
+    likes:12,
     time: new Date(),
     timeEdited: new Date(),
     title:"Topic",

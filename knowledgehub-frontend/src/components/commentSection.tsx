@@ -38,7 +38,7 @@ function CommentComponent(props: CommentProps){
 
 function CommentSection(props:PostProps) {
     const postId = props.Id;
-    const [commentList,setCommentList] = useState([]);
+    const [commentList,setCommentList] = useState([] as CommentProps[]);
     useEffect(() =>{
         getCommentApi(postId).then((data)=>{
             setCommentList(data)

@@ -6,15 +6,24 @@ import { useEffect, useState } from "react"
 import PostCard from "../components/PostCard"
 import { getPostList } from "../api/Api"
 import { SearchBar } from "../components/searchBar"
+
+function sortCondition(condition:number,postList:PostProps[]):PostProps[]{
+    const newPostList = postList
+    if (condition ===1) newPostList.sort((a, b) => a.time.getTime() < b.time.getTime() ? -1 : a.time.getTime() > b.time.getTime() ? 1 : 0);
+    else if (condition ===2) newPostList.sort((a, b) => a.likes < b.likes ? -1 : a.likes > b.likes ? 1 : 0);
+    return newPostList
+}
+
 function HomePage() {
     const [condiiton,setCondition] = useState<number>(0);
     const [postList,setPostList] = useState<PostProps[]>([]);
     useEffect(()=>{
-        getPostList(condiiton).then((data)=>{(
+        getPostList().then((data)=>{(
             setPostList(data)
         )})
-    },[postList])
-    let SearchBarRender = (condiiton === 2) ? (<SearchBar />):(null) ;
+    },[])
+    let SearchBarRender = (condiiton === 3) ? (<SearchBar />):(null) ;
+
     return (
         
         <>
@@ -33,7 +42,7 @@ function HomePage() {
                 }}>
                     {SearchBarRender}
                     {
-                        postList.map(post=>PostCard(post))
+                        sortCondition(condiiton,postList).map(post=>PostCard(post))
                     }
                 </div>
             </div>

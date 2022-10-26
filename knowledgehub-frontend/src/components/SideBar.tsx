@@ -33,13 +33,14 @@ function SideBar(props:any) {
         }}>
             <button className="menu_button" style={isSelect(0,selected)} onClick={()=>{setSelected(0)}}>My feed</button>
             <h1 className="category">Discover</h1>
-            <button className="menu_button" style={isSelect(1,selected)} onClick={()=>{setSelected(1)}}>Most upvoted</button>
-            <button className="menu_button" style={isSelect(2,selected)} onClick={()=>{setSelected(2)}}>Search</button>
+            <button className="menu_button" style={isSelect(1,selected)} onClick={()=>{setSelected(1)}}>Most Recent</button>
+            <button className="menu_button" style={isSelect(2,selected)} onClick={()=>{setSelected(2)}}>Most upvoted</button>
+            <button className="menu_button" style={isSelect(3,selected)} onClick={()=>{setSelected(3)}}>Search</button>
             <h1 className="category">Manage</h1>
-            <button className="menu_button" style={isSelect(3,selected)} onClick={()=>{setSelected(3)}}>New post</button>
-            <button className="menu_button" style={isSelect(4,selected)} onClick={()=>{setSelected(4)}}>Liked</button>
-            <button className="menu_button" style={isSelect(5,selected)} onClick={()=>{setSelected(5)}}>History</button>
-            <button className="menu_button" style={isSelect(6,selected)} onClick={()=>{setSelected(6)}}>Log out</button>
+            <button className="menu_button" style={isSelect(4,selected)} onClick={()=>{setSelected(4)}}>New post</button>
+            <button className="menu_button" style={isSelect(5,selected)} onClick={()=>{setSelected(5)}}>Liked</button>
+            <button className="menu_button" style={isSelect(6,selected)} onClick={()=>{setSelected(6)}}>History</button>
+            <button className="menu_button" style={isSelect(7,selected)} onClick={()=>{setSelected(7)}}>Log out</button>
         </div>
         
     ) 

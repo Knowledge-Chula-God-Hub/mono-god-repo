@@ -1,6 +1,7 @@
 export interface PostProps{
     isEnd: boolean;
     tagSubject:string;
+    likes:number;
     type:string;
     title: string;
     message: string;
