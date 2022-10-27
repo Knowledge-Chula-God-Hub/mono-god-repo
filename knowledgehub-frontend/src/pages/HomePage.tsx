@@ -56,10 +56,22 @@ function HomePage() {
             wrapperClassName="wrapper"
             
             />
-            <h1>Tags</h1> 
-            <TextField id="filled-basic" label="Tags" variant="filled" style={{width:"80%"}} /> 
+            <div className="Bcontainner">
+                <div style={{width:"50%"}}>
+                    <h1>Type</h1> 
+                    <TextField id="filled-basic" label="type" variant="filled" style={{width:"100%"}} /> 
+                </div>
+                <div style={{width:"50%"}}>
+                    <h1>Subject</h1> 
+                    <TextField id="filled-basic" label="subject" variant="filled" style={{width:"100%"}} /> 
+                </div>
+            </div>
+            <div style={{width:"80%"}}>
+                    <h1>Additional link</h1> 
+                    <TextField id="filled-basic" label="link" variant="filled" style={{width:"100%"}} /> 
+            </div>
+            
             <button className="submitButton">Submit</button> 
-            <Button className="submitButton" variant="contained">Submit</Button>
         </div>
     ):null;
 

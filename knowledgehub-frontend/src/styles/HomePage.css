@@ -75,9 +75,13 @@ a:visited {
     font-family: "poppins";
 }
 
+.newPostContainer h1{
+    font-size: 20px;
+}
+
 .wrapper{
     width: 80%;
-    border: 1px solid black;
+    border: 1px solid rgb(119, 119, 119);
     height: 300px;
 }
 
@@ -91,4 +95,16 @@ a:visited {
 .submitButton{
     background-color:#BCE29E;
     border-radius: 30px;
+    margin-top: 32px;
+    padding: 8px 16px;
+    border: none;
+    width: 150px;
+    font-size: 18px;
+}
+
+.Bcontainner{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    gap: 16px;
 }
