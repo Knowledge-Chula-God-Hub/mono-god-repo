@@ -59,11 +59,11 @@ def delete_user(id:int,db: Session = Depends(get_db)):
     db_user = crud.get_user_by_id(db,id = id)
     if db_user is None:
         raise HTTPException(status_code=404, detail="User not found")
-    return crud.delete_user(db,id=id)
+    return crud.delete_user_by_id(db,id=id)
 
-################# USER ########################
+################# POST ########################
 ########### get , post , put , delete #########
-################# USER ########################
+################# POST ########################
 
 ## get ##
 @routePost.get("/all", response_model=list[schemas.User])
@@ -104,9 +104,9 @@ def delete_user(id:int,db: Session = Depends(get_db)):
 
 
 
-################# USER ########################
+################# COMM ########################
 ########### get , post , put , delete #########
-################# USER ########################
+################# COMM ########################
 
 
 
