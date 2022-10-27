@@ -45,6 +45,6 @@ export const defaultPostProps:PostProps = {
 export const  defaultUserProps:UserProps = {
     id: -1,
     rank: 0,
-    name: "test",
+    name: "jirayuwat Doe",
     profileUrl: "test",
 }
