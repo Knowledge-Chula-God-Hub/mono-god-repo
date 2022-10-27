@@ -68,3 +68,27 @@ a:visited {
 }
 
 
+.newPostContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 16px 0px 0px 16px;
+    font-family: "poppins";
+}
+
+.wrapper{
+    width: 80%;
+    border: 1px solid black;
+    height: 300px;
+}
+
+*{
+    -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+
+.submitButton{
+    background-color:#BCE29E;
+    border-radius: 30px;
+}

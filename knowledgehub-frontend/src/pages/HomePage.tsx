@@ -5,10 +5,12 @@ import { ChangeEvent, useEffect, useState } from "react"
 import PostCard from "../components/PostCard"
 import { getPostList } from "../api/Api"
 import { SearchBar } from "../components/searchBar"
-import {Box, Modal, Typography, Checkbox,FormGroup,FormControlLabel, Slider} from "@material-ui/core"
+import {Box, Modal, Typography, Checkbox,FormGroup,FormControlLabel, Slider, TextField, Button} from "@material-ui/core"
 import "../styles/HomePage.css"
 import FilterModal from "../components/FilterModal"
-import { NONAME } from "dns"
+import { Editor } from "react-draft-wysiwyg";
+import { EditorState } from "draft-js";
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 function sortCondition(condition:number,postList:PostProps[]):PostProps[]{
     const newPostList = postList
@@ -18,9 +20,9 @@ function sortCondition(condition:number,postList:PostProps[]):PostProps[]{
 }
 
 function HomePage() {
-    const [condiiton,setCondition] = useState<number>(0);
+    const [condiiton,setCondition] = useState<number>(4);
     const [postList,setPostList] = useState<PostProps[]>([]);
-    const [open,setOpen] = useState<boolean>(true);
+    const [open,setOpen] = useState<boolean>(false);
     const [year,setYear] =  useState<number | number[]>(10);
 
     const handleSliderChange = (event: ChangeEvent<{}>, newValue: number | number[]) => {
@@ -32,7 +34,9 @@ function HomePage() {
     const handleClose = ()=>{
         setOpen(false);
     }
-
+    const [editorState, setEditorState] = useState(() =>
+        EditorState.createEmpty()
+    );
     useEffect(()=>{
         getPostList().then((data)=>{(
             setPostList(data)
@@ -42,7 +46,21 @@ function HomePage() {
     let SearchBarRender = (condiiton === 3) ? (<SearchBar openFilter = {setOpen} />):(null) ;
     
     const NewPostRender = (condiiton === 4) ?(
-        <div></div>
+        <div className="newPostContainer">
+            <h1>Title</h1> 
+            <TextField id="filled-basic" label="Title" variant="filled" style={{width:"80%"}} />
+            <h1>Details</h1> 
+            <Editor
+            editorState={editorState}
+            onEditorStateChange={setEditorState}
+            wrapperClassName="wrapper"
+            
+            />
+            <h1>Tags</h1> 
+            <TextField id="filled-basic" label="Tags" variant="filled" style={{width:"80%"}} /> 
+            <button className="submitButton">Submit</button> 
+            <Button className="submitButton" variant="contained">Submit</Button>
+        </div>
     ):null;
 
     return (
