@@ -21,7 +21,7 @@ function PostCard(props : PostProps){
     }
 `
     return (
-    <> 
+    <div > 
         <a href={link}></a>
         <div className='card'>
             <div className='avatar_title'>
@@ -53,7 +53,7 @@ function PostCard(props : PostProps){
             <div className='Line'></div>
         </div>
         <ToastContainer />
-    </>
+    </div>
     )
 }
 

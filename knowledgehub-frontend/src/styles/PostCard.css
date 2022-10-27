@@ -1,3 +1,7 @@
+a:visited {
+    color: black;
+    text-decoration: none;
+}
 .card{
     width: 65vw;
     margin: 16px;
@@ -11,6 +15,7 @@
     font-size: 40px;
     font-weight: bold;
     margin: 0px;
+    color: black;
 }
 .msg{
     font-family: "Poppins";
