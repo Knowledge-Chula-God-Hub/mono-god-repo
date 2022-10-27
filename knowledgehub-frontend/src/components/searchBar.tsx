@@ -4,7 +4,7 @@ import sortedLogo from "../assets/smallLogo/sort.svg"
 
 export function SearchBar(props:any){
     function enterHandler(){
-        console.log("enter")
+        props.keyword((document.getElementById("searchInputBox") as HTMLInputElement).value)
         return null;
     }
     return(
@@ -22,7 +22,7 @@ export function SearchBar(props:any){
                 height:"325x",
                 width:"25px"
                 }} alt="" />
-            <input id="searchInputBox" type="text" onKeyDown={enterHandler} placeholder="211020121" style={{
+            <input id="searchInputBox" type="text" onChange={enterHandler} placeholder="211020121" style={{
                 paddingLeft:"50px",
                 borderRadius: "32px",
                 fontSize:"20px",

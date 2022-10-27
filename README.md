@@ -18,7 +18,7 @@ all resources for the project.
 
 **Cloud and Database** PostgreSQL <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1985px-Postgresql_elephant.svg.png" width = "25">
 
-**server** in-dicision
+**server** localhost
 
 ## Team member
 
@@ -28,3 +28,5 @@ all resources for the project.
 - [Worapol Uphariphuti](https://github.com/worapol19) as Backend dev.
 - [Artty]() as Project manager
 ## Hosted on ...
+
+[localhost:3000/home](http://localhost:3000/home)

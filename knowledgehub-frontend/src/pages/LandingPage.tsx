@@ -19,7 +19,7 @@ function LandingPage() {
     const temp = Math.floor((examdate.getTime()-Date.now())/1000)
     const [time,setTime] = useState(temp)
 
-    const handleToHome = ()=>window.location.href = 'https://sso.thinc.in.th/html/login.html';
+    const handleToHome = ()=>window.location.href = '/home';
     const handleScrollDown = ()=>{window.scrollTo(0,document.body.scrollHeight)};
 
     useEffect(() => {

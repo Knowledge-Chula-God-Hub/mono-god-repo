@@ -39,11 +39,12 @@ function PostCard(props : PostProps){
                 </a>
                 <div className='tagandbutton'>
                     <div className='left'>
-                        <h1>{props.tagSubject}</h1>
-                        <h2>{props.title}</h2>
+                        <h1>{props.type}</h1>
+                        <h2>{props.tagSubject}</h2>
                     </div>
                     <div className='right'>
                         <img src={like} alt="" className='buttomlogo' onClick={()=>postLike(props.Id)} />
+                        <p>{props.likes}</p>
                         <img src={dislike} alt="" className='buttomlogo' onClick={()=>postDislike(props.Id)} />
                         <img src={comment} alt="" className='buttomlogo' onClick={()=>postComment(props.Id)} />
                         <img src={share} alt="" className='buttomlogo' onClick={()=>postShare(props.Id)} />    

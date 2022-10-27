@@ -81,6 +81,7 @@
     background-color: #BCE29E;
     border-radius: 30px;
     padding: 5px 16px;
+    align-self: center;
 }
 .left h2{
     margin: 0px;

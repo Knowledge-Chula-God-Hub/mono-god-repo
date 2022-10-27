@@ -14,8 +14,8 @@ import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 function sortCondition(condition:number,postList:PostProps[]):PostProps[]{
     const newPostList = postList
-    if (condition ===1) newPostList.sort((a, b) => a.time.getTime() < b.time.getTime() ? -1 : a.time.getTime() > b.time.getTime() ? 1 : 0);
-    else if (condition ===2) newPostList.sort((a, b) => a.likes < b.likes ? -1 : a.likes > b.likes ? 1 : 0);
+    if (condition ===1) newPostList.sort((a, b) => a.time.getTime() > b.time.getTime() ? -1 : a.time.getTime() < b.time.getTime() ? 1 : 0);
+    else if (condition ===2) newPostList.sort((a, b) => a.likes > b.likes ? -1 : a.likes < b.likes ? 1 : 0);
     return newPostList
 }
 
@@ -24,6 +24,8 @@ function HomePage() {
     const [postList,setPostList] = useState<PostProps[]>([]);
     const [open,setOpen] = useState<boolean>(false);
     const [year,setYear] =  useState<number | number[]>(10);
+    const [keyword,setKeyword] = useState<string>("");
+    const [moveButton,setMoveButton] = useState<boolean>(false);
 
     const handleSliderChange = (event: ChangeEvent<{}>, newValue: number | number[]) => {
         setYear(newValue);
@@ -41,9 +43,23 @@ function HomePage() {
         getPostList().then((data)=>{(
             setPostList(data)
         )})
-    },[postList,condiiton])
+    },[condiiton])
+    useEffect(()=>{
+        getPostList().then((data)=>{(
+            setPostList(data.filter((element)=>element.title.includes(keyword)))
+        )})
+    },[keyword])
+    useEffect(()=>{
+        if(document.getElementById("moveButton") == null){}
+        else if(moveButton) {
+            document.getElementById("moveButton")!.style.transform = "translate(300px,0px)";
+            document.getElementById("moveButton")!.style.transitionDuration= "0.5s";
+        }else{
+            document.getElementById("moveButton")!.style.transform = "scale(1)";
+        }
+    },[moveButton])
     
-    let SearchBarRender = (condiiton === 3) ? (<SearchBar openFilter = {setOpen} />):(null) ;
+    let SearchBarRender = (condiiton === 3) ? (<SearchBar openFilter = {setOpen} keyword = {setKeyword}/>):(null) ;
     
     const NewPostRender = (condiiton === 4) ?(
         <div className="newPostContainer">
@@ -71,7 +87,7 @@ function HomePage() {
                     <TextField id="filled-basic" label="link" variant="filled" style={{width:"100%"}} /> 
             </div>
             
-            <button className="submitButton">Submit</button> 
+            <button id = "moveButton" className="submitButton" onMouseEnter={()=>setMoveButton(true)} onMouseLeave={()=>setMoveButton(false)}>Submit</button> 
         </div>
     ):null;
 
@@ -88,7 +104,7 @@ function HomePage() {
                     width : "calc(100vw - 302px)",
                 }}>
                     {SearchBarRender}
-                    {([0,1,2,4,5].includes(condiiton))?
+                    {([0,1,2,3,6,5].includes(condiiton))?
                         sortCondition(condiiton,postList).map(post=>PostCard(post)):null
                     }
                     {NewPostRender}
