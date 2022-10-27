@@ -11,6 +11,7 @@ function LoginPage() {
     function processTicket(ticket:any){
         if (ticket === '') window.location.href = "/"
         else {
+            window.location.href = '/home'
             getUserFromChulaSSO(ticket).then((data)=>{
                 console.log(data);
                 console.log(ticket);
@@ -22,7 +23,6 @@ function LoginPage() {
                 //     profileUrl: ""
                 // }
                 // user.setData?.(NewUser);
-                // console.log("nice")
             })
         }
 
