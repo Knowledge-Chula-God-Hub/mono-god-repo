@@ -40,7 +40,7 @@ function SideBar(props:any) {
             <button className="menu_button" style={isSelect(4,selected)} onClick={()=>{setSelected(4)}}>New post</button>
             <button className="menu_button" style={isSelect(5,selected)} onClick={()=>{setSelected(5)}}>Liked</button>
             <button className="menu_button" style={isSelect(6,selected)} onClick={()=>{setSelected(6)}}>History</button>
-            <button className="menu_button" style={isSelect(7,selected)} onClick={()=>{setSelected(7)}}>Log out</button>
+            <button className="menu_button" style={isSelect(7,selected)} onClick={()=>{window.location.href = "/"}}>Log out</button>
         </div>
         
     ) 
