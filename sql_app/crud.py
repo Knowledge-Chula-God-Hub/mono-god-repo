@@ -1,51 +1,67 @@
 from sqlalchemy.orm import Session
 import models, schemas
+from models import UserTable
 
-# USER
+###############################################
+############## Base CRUD ######################
+###############################################
+
+def get_all(db:Session,table):
+    return db.query(table).offset(0).limit(1000).all()
+    
+
+def get_by_id(db:Session,table,id):
+    return db.query(table).filter(table.id == id).first()
+
+def delete_by_id(db:Session,table,id):
+    task = get_by_id(db,table,id=id)
+    db.delete(task)
+    db.commit()
+    return task
+
+
+###############################################
+############## USER CRUD ######################
+###############################################
 def get_user_all(db:Session):
-    return db.query(models.UserTable).first()
+    return get_all(db,models.UserTable)
 
-def get_user(db: Session, id: int):
-    return db.query(models.UserTable).filter(models.UserTable.id == id).first()
+def get_user_by_id(db: Session, id: int):
+    return get_by_id(db,models.UserTable,id)
 
 def get_user_name(db: Session, username: int):
     return db.query(models.UserTable).filter(models.UserTable.username == username).first()
 
 def create_user(db: Session, user: schemas.UserCreate):
-    db_user = models.UserTable(username=user.username)
+    db_user = models.UserTable(username=user.username,likes=0,rank =0,profile_url="")
     db.add(db_user)
     db.commit()
     db.refresh(db_user)
     return db_user
 
-# POST
-
-def get_post(db:Session, skip: int = 0, limit: int = 100):
-    return db.query(models.PostTable).offset(skip).limit(limit).all()
-
-def create_post(db: Session, post: schemas.PostCreate):
-    db_user = models.PostTable(ownerID=post.ownerID,
-        title = post.title,
-        message = post.message,
-        tagSubject = post.tagSubject,
-        typePost = post.typePost,)
-    db.add(db_user)
+def delete_user(db: Session, id: str):
+    task = delete_by_id(db,models.UserTable,id=id)
+    db.delete(task)
     db.commit()
-    db.refresh(db_user)
-    return db_user
+    return task
 
-# Comment
-
-def get_comment(db:Session, postId :int):
-    return db.query(models.CommentTable).filter(models.CommentTable.postId == postId).all()
-
-def create_commnet(db: Session, commnet: schemas.CommentCreate):
-    db_user = models.UserTable(
-        message=commnet.message,
-        postId = commnet.postId,
-        ownerID = commnet.ownerID
-        )
-    db.add(db_user)
+def change_user(db: Session, id:int,user: schemas.User,):
+    task = get_user(db,id=id)
+    task.username = user.username
+    task.likes = user.likes
+    task.rank = user.rank
+    task.profile_url = user.profile_url
+    db.add(task)
     db.commit()
-    db.refresh(db_user)
-    return db_user
+    db.refresh(task)
+    return task
+
+###############################################
+############## post CRUD ######################
+###############################################
+
+
+
+###############################################
+############## comm CRUD ######################
+###############################################

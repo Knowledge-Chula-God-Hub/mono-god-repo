@@ -17,9 +17,9 @@ class UserTable(Base):
     # Comment = relationship("CommentTable", back_populates="owner")
 
 class PostTable(Base):
-    __tablename__ = "PostTable"
+    __tablename__ = "posttable"
     id = Column(Integer, primary_key=True, index=True)
-    ownerID = Column(Integer , ForeignKey("UserTable.id"),nullable=True)
+    ownerID = Column(Integer , ForeignKey("usertable.id"),nullable=True)
     isEnd = Column(Boolean,default = False,nullable=True)
     title = Column(String(length = 80))
     message = Column(Text,nullable=True)
@@ -33,10 +33,10 @@ class PostTable(Base):
     # comment = relationship("CommentTable", back_populates="post")
 
 class CommentTable(Base):
-    __tablename__ = "CommentTable"
+    __tablename__ = "commenttable"
     id = Column(Integer, primary_key=True, index=True)
-    postId = Column(Integer , ForeignKey("PostTable.id"),nullable = False) # NOT NULL references PostTable(Id),
-    ownerID = Column(Integer , ForeignKey("UserTable.id"),nullable = False)
+    postId = Column(Integer , ForeignKey("posttable.id"),nullable = False) # NOT NULL references PostTable(Id),
+    ownerID = Column(Integer , ForeignKey("usertable.id"),nullable = False)
     score = Column(SmallInteger,default = 0)
     message = Column(Text)
     timeCreate = Column(DateTime(timezone=True), server_default=func.now())
