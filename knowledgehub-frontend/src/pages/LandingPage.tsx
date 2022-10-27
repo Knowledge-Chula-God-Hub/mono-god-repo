@@ -1,6 +1,9 @@
 import '../styles/LandingPage.css'
 import dropdown from "../assets/Dropdown.svg"
-import { useEffect, useState } from 'react'
+import { useEffect, useState,useContext } from 'react'
+import  { redirect } from 'react-router-dom'
+import { UserContext } from '../userContext'
+import { UserProps } from '../interfaces/UserProps'
 
 function getDate(time : number) :string{
 
@@ -18,8 +21,7 @@ function LandingPage() {
     const examdate = new Date('2022-11-28')
     const temp = Math.floor((examdate.getTime()-Date.now())/1000)
     const [time,setTime] = useState(temp)
-
-    const handleToHome = ()=>window.location.href = 'https://sso.thinc.in.th/html/login.html';
+    const handleToHome = ()=>window.location.href = 'http://localhost:8080//html/login.html?service=http://localhost:3000/login/';
     const handleScrollDown = ()=>{window.scrollTo(0,document.body.scrollHeight)};
 
     useEffect(() => {

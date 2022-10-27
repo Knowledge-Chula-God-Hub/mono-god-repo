@@ -1,5 +1,6 @@
 import { CommentProps } from "../interfaces/CommentProps"
 import { PostProps } from "../interfaces/PostProps";
+import { UserProps } from "../interfaces/UserProps";
 
 export const defaultCommentList:CommentProps[] = [
     {    commentId : 1,
@@ -40,3 +41,10 @@ export const defaultPostProps:PostProps = {
     ownerId: 6400000000,
     numberOfEdits: 99,
 };
+
+export const  defaultUserProps:UserProps = {
+    id: -1,
+    rank: 0,
+    name: "test",
+    profileUrl: "test",
+}

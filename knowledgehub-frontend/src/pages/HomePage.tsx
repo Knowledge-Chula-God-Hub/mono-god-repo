@@ -7,7 +7,9 @@ import { getPostList } from "../api/Api"
 import { SearchBar } from "../components/searchBar"
 import "../styles/HomePage.css"
 import FilterModal from "../components/FilterModal"
-import { NONAME } from "dns"
+import {useContext} from 'react'
+import { UserProps } from "../interfaces/UserProps"
+import { UserContext } from "../userContext"
 
 function sortCondition(condition:number,postList:PostProps[]):PostProps[]{
     const newPostList = postList
@@ -17,6 +19,8 @@ function sortCondition(condition:number,postList:PostProps[]):PostProps[]{
 }
 
 function HomePage() {
+    const userContext= useContext(UserContext);
+    const user:UserProps = userContext.data;
     const [condiiton,setCondition] = useState<number>(0);
     const [postList,setPostList] = useState<PostProps[]>([]);
     const [open,setOpen] = useState<boolean>(true);
@@ -46,7 +50,7 @@ function HomePage() {
 
     return (
         <>
-            <NavBar></NavBar>
+            <NavBar {...user}></NavBar>
             <div style={{display:"flex", flexDirection:"row"}}>
                 <SideBar setCondition = {setCondition}/>
                 <div style={{

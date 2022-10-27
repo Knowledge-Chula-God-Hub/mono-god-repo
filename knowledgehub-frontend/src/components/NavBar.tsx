@@ -1,7 +1,11 @@
 import "../styles/NavBar.css"
 import BCulogo from "../assets/logo.svg"
 import avatar from "../assets/avatar.svg"
-function NavBar() {
+import { UserContext } from "../userContext"
+import {useContext} from 'react' 
+import { UserProps } from "../interfaces/UserProps"
+import { UserContextProps } from "../interfaces/UserContextProps"
+function NavBar(user:UserProps) {
     const divstyle = {
         display:"flex",
         justifyContent:"space-between",
@@ -33,7 +37,7 @@ function NavBar() {
                     fontWeight:"normal",
                     fontSize:"20px",
                     alignSelf:"center"
-                }}>Hi, Jirayuwat</h1>
+                }}>Hi, {user?.name}</h1>
                 <img src={avatar} width="50px" className="avatar"></img>
             </div>
         </div>

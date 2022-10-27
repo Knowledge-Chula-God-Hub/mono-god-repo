@@ -8,6 +8,8 @@ import { useParams } from "react-router-dom";
 import { getPostDetails } from "../api/Api";
 import { useState,useEffect } from 'react';
 import { defaultPostProps } from "../api/defaultVarible";
+import { UserContext } from "../userContext";
+import {useContext} from "react"
 
 const userTest:UserProps ={
     id: 6432100000,
@@ -17,6 +19,8 @@ const userTest:UserProps ={
 }
 
 function PostPage() {
+    const userContext= useContext(UserContext);
+    const user:UserProps = userContext.data;
     const { Id } = useParams();
     const [testPropos,settestPropos] = useState(defaultPostProps);
 
@@ -36,7 +40,7 @@ function PostPage() {
     }
     return (
         <div className="postPage">
-            <NavBar />
+            <NavBar {...user}/>
             <div className="body" style={bodyStyle}>
                 <h1>{Id}</h1>
                 <UserPost {...userTest} />
